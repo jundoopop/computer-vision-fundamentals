@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Load the image
 
-pathOfImage = str(Path.cwd() / "cartoonify-image" / "230601_Karina_(aespa).jpg")
+pathOfImage = str(Path.cwd() / "cartoonify-image" / "tony.png")
 print(f"Path of Image: {pathOfImage}")
 img = cv.imread(pathOfImage)
 
@@ -14,7 +14,7 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 gray = cv.GaussianBlur(gray, (11, 11), 0)
 # Detect edges using adaptive thresholding
 edges = cv.adaptiveThreshold(
-    gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 21, 6
+    gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 21, 2
 )
 
 
@@ -29,8 +29,8 @@ cartoon = cv.bitwise_and(color, color, mask=edges)
 edges_3_channels = cv.cvtColor(edges, cv.COLOR_GRAY2BGR)
 vertical_stack = np.vstack((img, edges_3_channels, color, cartoon))
 
-cv.imshow("Cartoon", cartoon)
-# cv.imshow("Principle of Cartoonify", vertical_stack)
+# cv.imshow("Cartoon", cartoon)
+cv.imshow("Principle of Cartoonify", vertical_stack)
 
 while True:
     key = cv.waitKey(0)
