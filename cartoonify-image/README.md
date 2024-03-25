@@ -32,7 +32,7 @@ Executing `cv2.bitwise_and` make a cartoonified image by combining the edge and 
 
 | Good Example                | Bad Example                      |
 | ----------------------------| -------------------------------- |
-| ![alt text](image-2.png)    |        ![alt text](image-1.png)  |
+| ![Joe Biden](image-2.png)   |      ![Tony Stark](image-1.png)  |
 | Edges are well detected     | Edges are detected too much      |
 -----------------------------------------------------------------
 
