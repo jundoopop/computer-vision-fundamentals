@@ -1,6 +1,7 @@
 import numpy as np
 import cv2 as cv
 import json
+from pathlib import Path
 
 
 def select_img_from_video(
@@ -80,7 +81,10 @@ def calib_camera_from_chessboard(
 
 
 if __name__ == "__main__":
-    video_file = "C:\\Users\\a\\computer-vision-fundamentals\\camera-calibration-learning\\chessboard5.mp4"
+    cur_path = Path.cwd() / "camera-calibration-learning"
+
+    video_file = str(cur_path / "chessboard5.mp4")
+
     board_pattern = (10, 7)
     board_cellsize = 0.025
 
@@ -110,7 +114,8 @@ calibration_results = {
 }
 
 # The path to the results.json file
-json_file_path = "calibration_results.json"
+json_file_path = str(cur_path / "calibration_results.json")
+
 
 # Read the existing content of the JSON file, update it, and write it back
 try:
@@ -128,4 +133,4 @@ data.update({"camera_calibration_results": calibration_results})
 with open(json_file_path, "w") as file:
     json.dump(data, file, indent=4)
 
-print("Calibration results have been saved to 'results.json'")
+print("Calibration results have been saved to 'calibration_results.json'")
