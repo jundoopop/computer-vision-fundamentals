@@ -1,6 +1,6 @@
 # Distortion & Calibration of the Perspection
 
-This program ([`image_calibration.py`]()) detects grids and measures distortions and errors.
+This program [`image_calibration.py`](https://github.com/jundoopop/computer-vision-fundamentals/blob/main/camera-calibration-learning/image_calibration.py) detects grids and measures distortions and errors.
 
 ### Sample Video
 
@@ -37,6 +37,8 @@ np.array(
 ![alt text](calib-screenshot-01.png)
 
 ### Correction Result
+
+[`distortion_correction.py`](https://github.com/jundoopop/computer-vision-fundamentals/blob/main/camera-calibration-learning/distortion_correction.py) applies callibration results toward the video and show the fixed version of photo.
 
 | Orignals                             | Rectified Version                        |
 | -------------------------------------| ---------------------------------------- |
