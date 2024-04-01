@@ -3,22 +3,7 @@ import cv2 as cv
 
 # The given video and calibration data
 video_file = "C:\\Users\\a\\computer-vision-fundamentals\\camera-calibration-learning\\chessboard5.mp4"
-# K = np.array(
-#     [
-#         [1.15422732e03, 0.00000000e00, 6.71627794e02],
-#         [0.00000000e00, 1.15391057e03, 3.65805511e02],
-#         [0.00000000e00, 0.00000000e00, 1.00000000e00],
-#     ]
-# )  # Derived from `calibrate_camera.py`
-# dist_coeff = np.array(
-#     [
-#         -0.2852754904152874,
-#         0.1016466459919075,
-#         -0.0004420196146339175,
-#         0.0001149909868437517,
-#         -0.01803978785585194,
-#     ]
-# )
+
 
 K = np.array(
     [
