@@ -46,6 +46,8 @@ while True:
                 None,
                 (img.shape[1], img.shape[0]),
                 cv.CV_32FC1,
+
+                K, dist_coeff, None, None, (img.shape[1], img.shape[0]), cv.CV_32FC1
             )
         img = cv.remap(img, map1, map2, interpolation=cv.INTER_LINEAR)
         info = "Rectified"
