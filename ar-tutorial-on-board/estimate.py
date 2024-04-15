@@ -55,6 +55,16 @@ while True:
     # Estimate the camera pose
     success, img_points = cv.findChessboardCorners(img, board_pattern, board_criteria)
     if success:
+
+        map1, map2 = cv.initUndistortRectifyMap(
+            camera_pose,
+            dist_coeff,
+            None,
+            None,
+            (img.shape[1], img.shape[0]),
+            cv.CV_32FC1,
+        )
+        img = cv.remap(img, map1, map2, interpolation=cv.INTER_LINEAR)
         ret, rvec, tvec = cv.solvePnP(
             obj_points,
             img_points,
